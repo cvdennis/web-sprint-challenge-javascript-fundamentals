@@ -32,9 +32,10 @@ function summation(number) {
   for(let i = 0; i < 10; i ++){
     number = number + i;
   }
-  return number;
+   return number;
   }
  
+  
 
 // 🦁🦁🦁 Topic 2: ADVANCED Array Methods 🦁🦁🦁
 // Given this zoo data from around the United States, follow the instructions below. Use the specific array methods in the requests below to solve the problems.
@@ -87,10 +88,9 @@ const zooAnimals = [
   */
 
   function lowPopulationAnimals(){
-    const lowPop = [];
-    zooAnimals.filter(function(item){
+   const lowPop = zooAnimals.filter(function(item){
       return item.population < 5;
-    })
+    });
     return lowPop;
   }
   
@@ -178,7 +178,7 @@ CuboidMaker.prototype.volume = function(){
   2 * (length * width + length * height + width * height)  */
 
 CuboidMaker.prototype.surfaceArea = function(){
-  return (2 * ((this.length * this.width + this.length) * (this.heigh + this.width * this.height)));
+  return (2 * (this.length * this.width + this.length * this.height + this.width * this.height));
 }
 
 
@@ -201,9 +201,25 @@ const cuboid = new CuboidMaker(4, 5, 5);
 
 // 🦄🦄🦄 Topic 4: Classes 🦄🦄🦄 //
 //🦄🦄🦄 1. Take your prototypes from above and refactor into class syntax. Please rename your class CuboidMakerTwo and your object cuboidTwo 🦄🦄🦄
-class CuboidMakerTwo{
-
+class CuboidMakerTwo {
+  constructor (attributes) {
+    this.length = attributes.length;
+    this.width = attributes.width;
+    this.height = attributes.height;
+  }
+  volume (){
+    return (this.length * this.width * this.height);
+  }
+  surfaceArea() {
+    return (2 * (this.length * this.width + this.length * this.height + this.width * this.height));
+  }
 }
+
+const cuboidTwo = new CuboidMakerTwo ({
+  length: 4,
+  width: 5,
+  height: 5,
+});
 
 
 //🦄🦄🦄 Test your volume and surfaceArea methods by uncommenting the logs below: 🦄🦄🦄
@@ -216,7 +232,14 @@ class CuboidMakerTwo{
 
 // 🦄 💪 Stretch Task: Extend the base class CuboidMaker with a sub class called CubeMaker.  Find out the formulas for volume and surface area for cubes and create those methods using the dimension properties from CuboidMaker.  Test your work by logging out your volume and surface area. 🦄 💪
   
-
+// class CubeMaker extends CuboidMaker {
+//   constructor (cubeMakerAttributes) {
+//     super (cubeMakerAttributes);
+//   }
+//   cubeVolume () {
+//     return (this.length )
+//   }
+// }
 
 
 
