@@ -237,10 +237,15 @@ const cuboidTwo = new CuboidMakerTwo ({
 //     super (cubeMakerAttributes);
 //   }
 //   cubeVolume () {
-//     return (this.length )
+//     return (this.length * this.width * this.height);
 //   }
+//     cubeSurfaceArea () {
+//       return (6 * (this.length * this.width * this.height));
+//     }
 // }
-
+//  const cube = new CubeMaker ({
+//    length: 4
+//  })
 
 
 
